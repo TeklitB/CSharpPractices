@@ -9,13 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LambdasAndCollections", "La
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ActionAndFuncDelegates", "ActionAndFuncDelegates\ActionAndFuncDelegates.csproj", "{E8CADECC-75EF-480C-9D0A-B52BF84D6CDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Closures", "Closures\Closures.csproj", "{63498E84-AF2C-4A62-AD88-4EF77E21FE91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Closures", "Closures\Closures.csproj", "{63498E84-AF2C-4A62-AD88-4EF77E21FE91}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharoLINQ", "CSharoLINQ\CSharoLINQ.csproj", "{A2AF6D90-CB07-4F63-89B0-64AFAD2BDDC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpLINQ", "CSharoLINQ\CSharpLINQ.csproj", "{A2AF6D90-CB07-4F63-89B0-64AFAD2BDDC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqQuiz", "LinqQuiz\LinqQuiz.csproj", "{D8328CBF-E0AC-4C1B-99C0-9EA578BF97A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqQuiz", "LinqQuiz\LinqQuiz.csproj", "{D8328CBF-E0AC-4C1B-99C0-9EA578BF97A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinqQuiz.Test", "LinqQuiz.Test\LinqQuiz.Test.csproj", "{9B83E1C8-2DB1-4A56-866E-CE26692BAAC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqQuiz.Test", "LinqQuiz.Test\LinqQuiz.Test.csproj", "{9B83E1C8-2DB1-4A56-866E-CE26692BAAC3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
