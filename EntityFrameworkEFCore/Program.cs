@@ -44,6 +44,7 @@ namespace EFCore
             //dishRepository.ExecuteRawSql();
 
             // Experiment with Transaction with EF
+            dishRepository.Transactions();
 
         }
     }
