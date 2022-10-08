@@ -31,10 +31,17 @@ namespace EFCore
             // Experiment tracking EF Core object's state
             //dishRepository.ExperimentEntityStatues();
 
+            // Experiment effect of EF change tracker when querying
             //dishRepository.ChangeTracking();
 
+            // Experiment attaching/detaching entities forcefully to/from EF change tracker
             //dishRepository.AttachEntities();
-            dishRepository.NoTrackingEntities();
+
+            // Experiment querying with no tracking from DB
+            //dishRepository.NoTrackingEntities();
+
+            // Experiment how to execute raw sql queries in EF
+            dishRepository.ExecuteRawSql();
         }
     }
 }

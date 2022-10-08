@@ -8,6 +8,8 @@ namespace EFCore.Domain.DataAccess.Repository
 {
     public class DishRepository
     {
+        public DishRepository() { }
+
         public void AddDishes(Dish dish)
         {
             var args = new[] { "create" };
@@ -170,6 +172,31 @@ namespace EFCore.Domain.DataAccess.Repository
             //dbContext.SaveChanges();
 
             var updatedDishes = dbContext.Dishes.AsNoTracking().ToList();
+        }
+
+        public void ExecuteRawSql()
+        {
+            var factory = new CookbookContextFactory();
+            using var dbContext = factory.CreateDbContext(new[] { "create" });
+            var dishes1 = dbContext.Dishes
+                .FromSqlRaw("SELECT * FROM Dishes")
+                .ToList();
+
+            var filter = "%z";
+            var dishes2 = dbContext.Dishes
+                .FromSqlInterpolated($"SELECT * FROM Dishes WHERE Notes LIKE {filter}")
+                .ToList();
+
+            // SQL Injection
+            // This is a BAD practice. Because it is volunerable to sql inject attack.
+            // Example when var search = "%z; DELET FROM Dishes", it generates the following sql query.
+            //  SELECT * FROM Dishes WHERE Notes LIKE '%z; DELET FROM Dishes'
+            //var search = "%z; DELET FROM Dishes";
+            //var dishes3 = dbContext.Dishes
+            //    .FromSqlRaw("SELECT * FROM Dishes WHERE Notes LIKE '" + search + "'")
+            //    .ToList();
+
+            dbContext.Database.ExecuteSqlRaw("Delete FROM Dishes");
         }
     }
 }
