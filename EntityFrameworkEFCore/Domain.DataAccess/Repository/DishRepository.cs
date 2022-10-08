@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace EFCore.Domain.DataAccess.Repository
 {
@@ -218,6 +219,35 @@ namespace EFCore.Domain.DataAccess.Repository
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        public void ExpressionTrees()
+        {
+            var factory = new CookbookContextFactory();
+            using var dbContext = factory.CreateDbContext(new[] { "create" });
+            var dish = new Dish { Title = "Foo", Notes = "Bar" };
+            dbContext.Add(dish);
+            dbContext.SaveChanges();
+
+            var dishes = dbContext.Dishes
+                .Where(d => d.Title.StartsWith("F"))
+                .ToList();
+
+            Func<Dish, bool> predicate = d => d.Title.StartsWith("F");
+            // The C# compiler generates an object tree then EF core transalte it into sql at run time.
+            // Used only when the linq query is against database.
+            Expression<Func<Dish, bool>> expression = d => d.Title.StartsWith("F");
+
+            var inMemoryDishes = new[]
+            {
+                new Dish { Title = "Foo", Notes = "Bar" },
+                new Dish { Title = "Mushroom", Notes = "Baz" },
+            };
+            // The C# compiler converts the linq query into machine code and no need to generate an object tree
+            // when the source is an in-memory collection.
+            dishes = inMemoryDishes
+                .Where(d => d.Title.StartsWith("F"))
+                .ToList();
         }
     }
 }
