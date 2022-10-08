@@ -31,7 +31,9 @@ namespace EFCore
             // Experiment tracking EF Core object's state
             //dishRepository.ExperimentEntityStatues();
 
-            dishRepository.ChangeTracking();
+            //dishRepository.ChangeTracking();
+
+            dishRepository.AttachEntities();
         }
     }
 }

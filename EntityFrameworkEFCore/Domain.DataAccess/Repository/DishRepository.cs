@@ -1,4 +1,5 @@
 ﻿using EFCore.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -121,6 +122,28 @@ namespace EFCore.Domain.DataAccess.Repository
             //This dbcontext has no any change tracked and it returns the original value from DB.
             // Hence, dishFromDb.Notes = "Bar"
             var dishFromDbByDbContext2 = dbContext2.Dishes.Single(d => d.Id == dish.Id);
+        }
+
+        /// <summary>
+        /// This method is to experiment forcefully changing the entity state
+        /// </summary>
+        public void AttachEntities()
+        {
+            var factory = new CookbookContextFactory();
+            using var dbContext = factory.CreateDbContext(new[] { "create" });
+            var dish = new Dish { Title = "Foo", Notes = "Bar" };
+            dbContext.Add(dish);
+
+            dbContext.SaveChanges();
+
+            // EF: Forget the dish object.
+            dbContext.Entry(dish).State = EntityState.Detached;
+            var state = dbContext.Entry(dish).State;
+
+            // Takes an object which is not part of the EF change tracker
+            // and add it to the change tracker.
+            dbContext.Dishes.Update(dish);
+            dbContext.SaveChanges();
         }
     }
 }
