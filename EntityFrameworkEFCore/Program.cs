@@ -33,7 +33,8 @@ namespace EFCore
 
             //dishRepository.ChangeTracking();
 
-            dishRepository.AttachEntities();
+            //dishRepository.AttachEntities();
+            dishRepository.NoTrackingEntities();
         }
     }
 }

@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace EFCore.Domain.DataAccess.Repository
 {
@@ -144,6 +143,33 @@ namespace EFCore.Domain.DataAccess.Repository
             // and add it to the change tracker.
             dbContext.Dishes.Update(dish);
             dbContext.SaveChanges();
+        }
+
+        public void NoTrackingEntities()
+        {
+            var factory = new CookbookContextFactory();
+            using var dbContext = factory.CreateDbContext(new[] { "create" });
+            var dish = new Dish { Title = "Foo", Notes = "Bar" };
+            dbContext.Add(dish);
+            dbContext.SaveChanges();
+
+            // SELECT * FROM Dishes
+            // It puts the objects into the change tracker
+            var dishes = dbContext.Dishes.ToList();
+            var dishesState = dbContext.Entry(dishes[0]).State; // State << Unchanged >>
+            
+            // Do not put the objects into the change tracker
+            // IF make changes on these objects, nothing will happen as they are not tracked.
+            // Used in readonly senario, that you do not want to write anything back to the database.
+            var notTrackedDishes = dbContext.Dishes.AsNoTracking().ToList();
+            var notTrackedDishesState = dbContext.Entry(notTrackedDishes[0]).State; // State << Detached >>
+
+            notTrackedDishes[0].Notes = "Mushroom";
+            // If you want to apply the change
+            //dbContext.Dishes.Update(notTrackedDishes[0]);
+            //dbContext.SaveChanges();
+
+            var updatedDishes = dbContext.Dishes.AsNoTracking().ToList();
         }
     }
 }
