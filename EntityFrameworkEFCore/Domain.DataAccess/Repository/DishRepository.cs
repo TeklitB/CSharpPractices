@@ -1,4 +1,5 @@
 ﻿using EFCore.Model;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -197,6 +198,26 @@ namespace EFCore.Domain.DataAccess.Repository
             //    .ToList();
 
             dbContext.Database.ExecuteSqlRaw("Delete FROM Dishes");
+        }
+
+        public void Transactions()
+        {
+            var factory = new CookbookContextFactory();
+            using var dbContext = factory.CreateDbContext(new[] { "create" });
+            var dish = new Dish { Title = "Foo", Notes = "Bar" };
+            using var transaction = dbContext.Database.BeginTransaction();
+            try
+            {
+                dbContext.Add(dish);
+                dbContext.SaveChanges();
+
+                dbContext.Database.ExecuteSqlRaw("SELECT 1/0 as Bad");
+                transaction.Commit();
+            }
+            catch(SqlException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

@@ -41,7 +41,10 @@ namespace EFCore
             //dishRepository.NoTrackingEntities();
 
             // Experiment how to execute raw sql queries in EF
-            dishRepository.ExecuteRawSql();
+            //dishRepository.ExecuteRawSql();
+
+            // Experiment with Transaction with EF
+
         }
     }
 }
