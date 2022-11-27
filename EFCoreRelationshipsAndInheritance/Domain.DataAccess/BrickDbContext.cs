@@ -1,4 +1,4 @@
-﻿using EFCoreRelationshipsAndInheritance.Data.Model;
+﻿using EFCoreRelationshipsAndInheritance.Domain.Model;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

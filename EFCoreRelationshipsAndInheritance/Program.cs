@@ -14,9 +14,10 @@ namespace EFCoreRelationshipsAndInheritance
 }
 
 // Note: Add Nugat Packages:
-// 1. Microsoft.EntityFrameworkCore.Design
-// 2. Microsoft.EntityFrameworkCore.SqlServer
-// 3. Microsoft.Extensions.Configuration
+// 1. Microsoft.EntityFrameworkCore
+// 2. Microsoft.EntityFrameworkCore.Design
+// 3. Microsoft.EntityFrameworkCore.SqlServer
+// 4. Microsoft.Extensions.Configuration.Json
 //      -> to read db connection string from file such as appsettings.json 
 //      -> Specially usefull when we develop console application
-// 4. Microsoft.Extensions.Logging.Console
+// 5. Microsoft.Extensions.Logging.Console

@@ -1,6 +1,6 @@
 ﻿using EFCoreRelationshipsAndInheritance.EFCommon;
 
-namespace EFCoreRelationshipsAndInheritance.Data.Model
+namespace EFCoreRelationshipsAndInheritance.Domain.Model
 {
     public class Brick
     {

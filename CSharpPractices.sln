@@ -19,7 +19,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinqQuiz.Test", "LinqQuiz.T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore", "EntityFrameworkEFCore\EFCore.csproj", "{BF9B81F7-8DCE-48A8-94C5-13F1C4DD2E33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreRelationshipsAndInheritance", "EFCoreRelationshipsAndInheritance\EFCoreRelationshipsAndInheritance.csproj", "{F817C574-DC5E-4EC8-AA43-5D9044333606}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreRelationshipsAndInheritance", "EFCoreRelationshipsAndInheritance\EFCoreRelationshipsAndInheritance.csproj", "{F817C574-DC5E-4EC8-AA43-5D9044333606}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreDeleteBehaviors", "EFCoreDeleteBehaviors\EFCoreDeleteBehaviors.csproj", "{6E4C07AA-07CB-4215-8BF2-00352F2A3E47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{F817C574-DC5E-4EC8-AA43-5D9044333606}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F817C574-DC5E-4EC8-AA43-5D9044333606}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F817C574-DC5E-4EC8-AA43-5D9044333606}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E4C07AA-07CB-4215-8BF2-00352F2A3E47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E4C07AA-07CB-4215-8BF2-00352F2A3E47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E4C07AA-07CB-4215-8BF2-00352F2A3E47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E4C07AA-07CB-4215-8BF2-00352F2A3E47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

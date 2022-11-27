@@ -1,5 +1,5 @@
 ﻿
-namespace EFCoreRelationshipsAndInheritance.Data.Model
+namespace EFCoreRelationshipsAndInheritance.Domain.Model
 {
     public class Vendor
     {
