@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCore", "EntityFrameworkEF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreRelationshipsAndInheritance", "EFCoreRelationshipsAndInheritance\EFCoreRelationshipsAndInheritance.csproj", "{F817C574-DC5E-4EC8-AA43-5D9044333606}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFCoreDeleteBehaviors", "EFCoreDeleteBehaviors\EFCoreDeleteBehaviors.csproj", "{6E4C07AA-07CB-4215-8BF2-00352F2A3E47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreDeleteBehaviors", "EFCoreDeleteBehaviors\EFCoreDeleteBehaviors.csproj", "{6E4C07AA-07CB-4215-8BF2-00352F2A3E47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventManagementWebApi", "EventManagementWebApi\EventManagementWebApi.csproj", "{470FB7F3-D165-4C57-95EC-49B74A3F1ED6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{6E4C07AA-07CB-4215-8BF2-00352F2A3E47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E4C07AA-07CB-4215-8BF2-00352F2A3E47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E4C07AA-07CB-4215-8BF2-00352F2A3E47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{470FB7F3-D165-4C57-95EC-49B74A3F1ED6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{470FB7F3-D165-4C57-95EC-49B74A3F1ED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{470FB7F3-D165-4C57-95EC-49B74A3F1ED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{470FB7F3-D165-4C57-95EC-49B74A3F1ED6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
