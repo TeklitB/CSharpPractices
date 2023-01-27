@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreDeleteBehaviors", "EF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventManagementWebApi", "EventManagementWebApi\EventManagementWebApi.csproj", "{470FB7F3-D165-4C57-95EC-49B74A3F1ED6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection", "DependencyInjection\DependencyInjection.csproj", "{87A0F432-4B9E-44C2-93CA-6ACDA47A492B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DependencyInjection", "DependencyInjection\DependencyInjection.csproj", "{87A0F432-4B9E-44C2-93CA-6ACDA47A492B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleBasedWindowsServiceApp", "ConsoleBasedWindowsServiceApp\ConsoleBasedWindowsServiceApp.csproj", "{6EC66CCF-E545-4213-8ACB-C88623FD7B1C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +83,10 @@ Global
 		{87A0F432-4B9E-44C2-93CA-6ACDA47A492B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87A0F432-4B9E-44C2-93CA-6ACDA47A492B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87A0F432-4B9E-44C2-93CA-6ACDA47A492B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EC66CCF-E545-4213-8ACB-C88623FD7B1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EC66CCF-E545-4213-8ACB-C88623FD7B1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EC66CCF-E545-4213-8ACB-C88623FD7B1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EC66CCF-E545-4213-8ACB-C88623FD7B1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
