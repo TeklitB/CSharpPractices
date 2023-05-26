@@ -1,6 +1,8 @@
 ﻿using EFCore.Domain.DataAccess.Repository;
 using EFCore.Model;
 using System;
+using System.IO;
+using System.Reflection;
 
 namespace EFCore
 {
@@ -8,6 +10,10 @@ namespace EFCore
     {
         static void Main(string[] args)
         {
+            var path = Directory.GetCurrentDirectory();
+
+            var projDir = Path.GetDirectoryName(AppDomain.CurrentDomain.BaseDirectory);
+
             var dishRepository = new DishRepository();
 
             Console.WriteLine("Hello Entity Framework (EF Core)!");
